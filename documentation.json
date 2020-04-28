@@ -1,0 +1,502 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "Chainable",
+            "id": "interface-Chainable-b1762a781d5742b5055f64078c91da94",
+            "file": "apps/storybook-e2e/src/support/commands.ts",
+            "type": "interface",
+            "sourceCode": "declare namespace Cypress {\r\n  interface Chainable<Subject> {\r\n    login(email: string, password: string): void;\r\n  }\r\n}\r\n//\r\n// -- This is a parent command --\r\nCypress.Commands.add('login', (email, password) => {\r\n  console.log('Custom command example: Login', email, password);\r\n});\r\n//\r\n// -- This is a child command --\r\n// Cypress.Commands.add(\"drag\", { prevSubject: 'element'}, (subject, options) => { ... })\r\n//\r\n//\r\n// -- This is a dual command --\r\n// Cypress.Commands.add(\"dismiss\", { prevSubject: 'optional'}, (subject, options) => { ... })\r\n//\r\n//\r\n// -- This will overwrite an existing command --\r\n// Cypress.Commands.overwrite(\"visit\", (originalFn, url, options) => { ... })\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "kind": 152,
+            "methods": [
+                {
+                    "name": "login",
+                    "args": [
+                        {
+                            "name": "email",
+                            "type": "string"
+                        },
+                        {
+                            "name": "password",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "jsdoctags": [
+                        {
+                            "name": "email",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "password",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "injectables": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-fd3119b5c148c4ce321c70c21b799975",
+            "file": "apps/storybook/src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "kiran-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'storybook'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'kiran-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'storybook';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "/*\r\n * Remove template code below\r\n */\r\n:host {\r\n  display: block;\r\n  font-family: sans-serif;\r\n  min-width: 300px;\r\n  max-width: 600px;\r\n  margin: 50px auto;\r\n}\r\n\r\n.gutter-left {\r\n  margin-left: 9px;\r\n}\r\n\r\n.col-span-2 {\r\n  grid-column: span 2;\r\n}\r\n\r\n.flex {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\nheader {\r\n  background-color: #143055;\r\n  color: white;\r\n  padding: 5px;\r\n  border-radius: 3px;\r\n}\r\n\r\nmain {\r\n  padding: 0 36px;\r\n}\r\n\r\np {\r\n  text-align: center;\r\n}\r\n\r\nh1 {\r\n  text-align: center;\r\n  margin-left: 18px;\r\n  font-size: 24px;\r\n}\r\n\r\nh2 {\r\n  text-align: center;\r\n  font-size: 20px;\r\n  margin: 40px 0 10px 0;\r\n}\r\n\r\n.resources {\r\n  text-align: center;\r\n  list-style: none;\r\n  padding: 0;\r\n  display: grid;\r\n  grid-gap: 9px;\r\n  grid-template-columns: 1fr 1fr;\r\n}\r\n\r\n.resource {\r\n  color: #0094ba;\r\n  height: 36px;\r\n  background-color: rgba(0, 0, 0, 0);\r\n  border: 1px solid rgba(0, 0, 0, 0.12);\r\n  border-radius: 4px;\r\n  padding: 3px 9px;\r\n  text-decoration: none;\r\n}\r\n\r\n.resource:hover {\r\n  background-color: rgba(68, 138, 255, 0.04);\r\n}\r\n\r\npre {\r\n  padding: 9px;\r\n  border-radius: 4px;\r\n  background-color: black;\r\n  color: #eee;\r\n}\r\n\r\ndetails {\r\n  border-radius: 4px;\r\n  color: #333;\r\n  background-color: rgba(0, 0, 0, 0);\r\n  border: 1px solid rgba(0, 0, 0, 0.12);\r\n  padding: 3px 9px;\r\n  margin-bottom: 9px;\r\n}\r\n\r\nsummary {\r\n  cursor: pointer;\r\n  outline: none;\r\n  height: 36px;\r\n  line-height: 36px;\r\n}\r\n\r\n.github-star-container {\r\n  margin-top: 12px;\r\n  line-height: 20px;\r\n}\r\n\r\n.github-star-container a {\r\n  display: flex;\r\n  align-items: center;\r\n  text-decoration: none;\r\n  color: #333;\r\n}\r\n\r\n.github-star-badge {\r\n  color: #24292e;\r\n  display: flex;\r\n  align-items: center;\r\n  font-size: 12px;\r\n  padding: 3px 10px;\r\n  border: 1px solid rgba(27, 31, 35, 0.2);\r\n  border-radius: 3px;\r\n  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);\r\n  margin-left: 4px;\r\n  font-weight: 600;\r\n}\r\n\r\n.github-star-badge:hover {\r\n  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);\r\n  border-color: rgba(27, 31, 35, 0.35);\r\n  background-position: -0.5em;\r\n}\r\n.github-star-badge .material-icons {\r\n  height: 16px;\r\n  width: 16px;\r\n  margin-right: 4px;\r\n}\r\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<kiran-slider></kiran-slider>\r\n\r\n\r\n"
+        },
+        {
+            "name": "SliderComponent",
+            "id": "component-SliderComponent-02f506206997967697f9ad7ba4691cbb",
+            "file": "libs/ui/src/lib/slider/slider.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "kiran-slider",
+            "styleUrls": [
+                "./slider.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./slider.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'kiran-slider',\r\n  templateUrl: './slider.component.html',\r\n  styleUrls: ['./slider.component.scss']\r\n})\r\nexport class SliderComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./slider.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "Slider\r\n<mat-slider min=\"1\" max=\"100\" step=\"1\" value=\"1\"></mat-slider>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "UiModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "UiModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "SliderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "SliderComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "ButtonWithLinkToAnotherStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Go to Welcome Story',\n    onClick: linkTo('Welcome'),\n  },\n})"
+            },
+            {
+                "name": "Emoji",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n  },\n})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/storybook/src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/storybook/src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\r\n  production: false\r\n}"
+            },
+            {
+                "name": "getGreeting",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "apps/storybook-e2e/src/support/app.po.ts",
+                "type": "",
+                "defaultValue": "() => cy.get('h1')"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Hello Button',\n  },\n})"
+            },
+            {
+                "name": "ToStorybook",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/0-Welcome.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Welcome,\n  props: {},\n})"
+            },
+            {
+                "name": "WithSomeEmojiAndAction",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/1-Button.stories.ts",
+                "type": "",
+                "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n    onClick: action('This was clicked OMG'),\n  },\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/stories/1-Button.stories.ts": [
+                {
+                    "name": "ButtonWithLinkToAnotherStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Go to Welcome Story',\n    onClick: linkTo('Welcome'),\n  },\n})"
+                },
+                {
+                    "name": "Emoji",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n  },\n})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: 'Hello Button',\n  },\n})"
+                },
+                {
+                    "name": "WithSomeEmojiAndAction",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/1-Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Button,\n  props: {\n    text: '😀 😎 👍 💯',\n    onClick: action('This was clicked OMG'),\n  },\n})"
+                }
+            ],
+            "apps/storybook/src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/storybook/src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
+                }
+            ],
+            "apps/storybook/src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/storybook/src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "apps/storybook-e2e/src/support/app.po.ts": [
+                {
+                    "name": "getGreeting",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "apps/storybook-e2e/src/support/app.po.ts",
+                    "type": "",
+                    "defaultValue": "() => cy.get('h1')"
+                }
+            ],
+            "src/stories/0-Welcome.stories.ts": [
+                {
+                    "name": "ToStorybook",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/0-Welcome.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: Welcome,\n  props: {},\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "apps/storybook-e2e/src/support/app.po.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getGreeting",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/storybook-e2e/src/support/commands.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Chainable",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/storybook/src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/storybook/src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "apps/storybook/src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "libs/ui/src/lib/slider/slider.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SliderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/0-Welcome.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ToStorybook",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ButtonWithLinkToAnotherStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Emoji",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/1-Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithSomeEmojiAndAction",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
